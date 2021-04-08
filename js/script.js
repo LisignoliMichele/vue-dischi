@@ -6,6 +6,7 @@ var app = new Vue(
          genres:  ["",],
          select: "",
          search: "",
+         albumIndex: 0,
       },
       mounted: function() {
          axios.get("https://flynn.boolean.careers/exercises/api/array/music")
@@ -25,7 +26,8 @@ var app = new Vue(
          filtredAlbums: function(){
              return this.albums.filter((music) =>{
                 if (this.search != ""){
-                  return music.title.toLowerCase().match(this.search.toLowerCase());
+                  return music.title.toLowerCase().match(this.search.toLowerCase())
+                  
                 }else{
                   return music.genre.match(this.select)
                 }

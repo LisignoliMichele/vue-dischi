@@ -116,7 +116,7 @@
                       <option v-for="genre in genres">{{genre}} </option>
                     </select>
                   <div class="album_music">
-                    <a href="#" class="music" v-for="album in filtredAlbums">
+                    <a v-if="albums.length > 0" href="#" class="music" v-for="(album, index) in filtredAlbums" @click="albumIndex = index">
                       <div class="album_photo">
                         <img :src="album.poster" :alt="album.title">
                       </div>
@@ -135,13 +135,13 @@
             <!-- footer -->
             <footer>
               <!-- footer left -->
-              <div class="left">
+              <div v-if="albums.length > 0" class="left">
                 <div class="playing_album_photo">
-                  <img src="img/lucio_dalla.jpg" alt="Grandissimo Lucio - a song for boolean">
+                  <img :src="albums[albumIndex].poster" :alt="albums[albumIndex].title">
                 </div>
                 <div class="playing_album_text">
-                  <h5>Lucio Dalla</h5>
-                  <p>L'anno che verrà</p>
+                  <h5 > {{ albums[albumIndex].title }} </h5>
+                  <p> {{ albums[albumIndex].author }} </p>
                 </div>
                 <div class="playing_album_save">
                   <ul class="list_none list_inline">
