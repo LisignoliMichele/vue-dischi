@@ -109,9 +109,16 @@
 
                 <!-- VUE BOOLEAN PLAYLIST -->
                 <section id="recently_played">
-                  <h2>VUE.JS BOOLEAN PLAYLIST</h2>
+                  <h2>VUE.JS BOOLEAN PLAYLIST</h2> 
+                  <!-- <select v-if="genres.length > 0" v-model="selectedGenre">
+                    <option v-for="genre in genres" value="">{{ genre }}</option>
+                    </select> -->
+                    <!-- <input v-model="search" type="text" placeholder="select genre"></i> -->
+                    <select v-model="select">
+                      <option v-for="genre in genres">{{genre}} </option>
+                    </select>
                   <div class="album_music">
-                    <a href="#" class="music" v-for="album in albums">
+                    <a href="#" class="music" v-for="album in filtredAlbums">
                       <div class="album_photo">
                         <img :src="album.poster" :alt="album.title">
                       </div>
