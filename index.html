@@ -110,11 +110,9 @@
                 <!-- VUE BOOLEAN PLAYLIST -->
                 <section id="recently_played">
                   <h2>VUE.JS BOOLEAN PLAYLIST</h2> 
-                  <!-- <select v-if="genres.length > 0" v-model="selectedGenre">
-                    <option v-for="genre in genres" value="">{{ genre }}</option>
-                    </select> -->
-                    <!-- <input v-model="search" type="text" placeholder="select genre"></i> -->
-                    <select v-model="select">
+                  
+                    <input v-model="search" type="text" placeholder="search"></i>
+                    <select v-if="genres.length > 0" v-model="select">
                       <option v-for="genre in genres">{{genre}} </option>
                     </select>
                   <div class="album_music">
