@@ -5,14 +5,178 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="css/style.css">
+      <!-- google font -->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+      <!-- /google font -->
+      <!-- fontawesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+      <!-- /fontawesome -->
+      <link rel="stylesheet" href="css/style.css">
       <!-- development version, includes helpful console warnings -->
       <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
       <!-- axios cdn -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
-      <title>API Email List</title>
+      <title>VUE DISCHI</title>
    </head>
    <body>
       <div id="app">
+         <div class="spotyVUE">
+            <!-- upgrade -->
+            <div class="upgrade">
+              <button class="upgrade-btn">effettua l'upgrade</button>
+            </div>
+            <!-- /upgrade -->
+            <main>
+              <!-- aside -->
+              <aside class="menu">
+                <!-- aside top -->
+                <div class="logo">
+                  <img class="normal-logo" src="img/logo.svg" alt="spotify logo">
+                  <img class="small-logo" src="img/logo-small.svg" alt="spotify logo">
+                </div>
+                <nav class="main_nav">
+                  <ul>
+                    <li>
+                      <a href="#">
+                        <img src="img/home.svg" alt="home icon">
+                        <p>Home</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="img/search.svg" alt="search icon">
+                        <p>Cerca</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="img/libreria.svg" alt="library icon">
+                        <p>La tua libreria</p>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- /aside top -->
+                <!-- aside center -->
+                <div class="playlist_title">
+                  <h3>playlist</h3>
+                  <a class="new-playlist" href="#">
+                    <img src="img/plus_ico.svg" alt="plus icon">
+                    <span>Crea Playlist</span>
+                  </a>
+                </div>
+                <nav class="playlist">
+                  <ul class="playlist_list list_none">
+                    <li><a href="#">Nome Playlist</a></li>
+                    <li><a href="#">Nome Playlist</a></li>
+                    <li><a href="#">Nome Playlist</a></li>
+                    <li><a href="#">Nome Playlist</a></li>
+                    <li><a href="#">Nome Playlist</a></li>
+                  </ul>
+                </nav>
+                <!-- /aside center -->
+                <!-- aside bottom -->
+                <div class="user">
+                  <a href="#">
+                    <i class="far fa-arrow-alt-circle-down"></i>
+                    <p>Installa app</p>
+                  </a>
+                  <hr>
+                  <div class="profile">
+                    <img src="img/profile.svg" alt="user picture">
+                    <p>Jhon Doe</p>
+                  </div>
+                </div>
+                <!-- /aside bottom -->
+              </aside>
+              <!-- /aside -->
+              <!-- gallery -->
+              <div class="gallery">
+                <!-- gallery nav -->
+                <nav>
+                  <ul class="gallery_nav list_none">
+                    <li><a href="#">in evidenza</a></li>
+                    <li><a href="#">podcast</a></li>
+                    <li><a href="#">classifiche</a></li>
+                    <li><a href="#">generi e mood</a></li>
+                    <li><a href="#">nuove uscite</a></li>
+                    <li><a href="#">scopri</a></li>
+                  </ul>
+                </nav>
+                <!-- /gallery nav -->
+
+
+                <!-- VUE BOOLEAN PLAYLIST -->
+                <section id="recently_played">
+                  <h2>VUE.JS BOOLEAN PLAYLIST</h2>
+                  <div class="album_music">
+                    <a href="#" class="music" v-for="album in albums">
+                      <div class="album_photo">
+                        <img :src="album.poster" :alt="album.title">
+                      </div>
+                      <h4>{{ album.title }}</h4>
+                      <p>{{ album.author }} - <span>{{ album.year }}</span></p>
+                    </a>
+                  </div>
+                </section>
+                <!-- /VUE BOOLEAN PLAYLIST -->
+
+
+
+              </div>
+              <!-- /gallery -->
+            </main>
+            <!-- footer -->
+            <footer>
+              <!-- footer left -->
+              <div class="left">
+                <div class="playing_album_photo">
+                  <img src="img/lucio_dalla.jpg" alt="Grandissimo Lucio - a song for boolean">
+                </div>
+                <div class="playing_album_text">
+                  <h5>Lucio Dalla</h5>
+                  <p>L'anno che verrà</p>
+                </div>
+                <div class="playing_album_save">
+                  <ul class="list_none list_inline">
+                    <li><a href="#"><i class="far fa-heart"></i></a></li>
+                    <li><a href="#"><i class="far fa-folder"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- /footer left -->
+              <!-- footer center -->
+              <div class="center">
+                <ul class="playback-list list_none">
+                  <li><a href="#"><i class="fas fa-random"></i></a></li>
+                  <li><a href="#"><i class="fas fa-step-backward"></i></a></li>
+                  <li><a href="#"><i class="playbutton far fa-play-circle"></i></a></li>
+                  <li><a href="#"><i class="fas fa-step-forward"></i></a></li>
+                  <li><a href="#"><i class="fas fa-undo"></i></a></li>
+                </ul>
+                <div class="time">
+                  <p><small class="played-time">0:25</small></p>
+                  <div class="time_bar">
+                    <div class="played"></div>
+                  </div>
+                  <p><small class="remaining-time">4:35</small></p>
+                </div>
+              </div>
+              <!-- /footer center -->
+              <!-- footer right -->
+              <div class="right">
+                <ul class="sharing list_none">
+                  <li><a href="#"><i class="fas fa-bars"></i></a></li>
+                  <li><a href="#"><i class="sharing_ico fas fa-desktop"></i></a></li>
+                </ul>
+                <div class="sound_ico"><i class="vol-ico fas fa-volume-up"></i></div>
+                <div class="volume_bar"><div class="volume"></div></div>
+              </div>
+              <!-- footer right -->
+            </footer>
+            <!-- /footer -->
+         </div>
       </div>
       <script src="js/script.js"></script>
    </body>
