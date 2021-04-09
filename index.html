@@ -113,7 +113,8 @@
                   
                     <input v-model="search" type="text" placeholder="search"></i>
                     <select v-if="genres.length > 0" v-model="select">
-                      <option v-for="genre in genres">{{genre}} </option>
+                      <option value="">Tutti i generi</option>
+                      <option :value="genre" v-for="genre in genres">{{genre}} </option>
                     </select>
                   <div class="album_music">
                     <a v-if="albums.length > 0" href="#" class="music" v-for="(album, index) in filtredAlbums" @click="albumIndex = index">

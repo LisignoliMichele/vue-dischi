@@ -3,7 +3,7 @@ var app = new Vue(
       el: "#app",
       data:{
          albums: [],
-         genres:  ["",],
+         genres: [],
          select: "",
          search: "",
          albumIndex: 0,
